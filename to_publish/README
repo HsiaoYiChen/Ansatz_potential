@@ -1,8 +1,0 @@
-1. use the make_random.f90 to create a bash script: run.sh
-2. activate  run.sh to create folders of different spin configuration.
-3. do QE scf calculation in all the folders
-4. use R_sym.f90 to create the index mapping and symmetry operation
-5. activate run_extract.sh to collect the result from scf calculation after symmetry treatment.
-6. use fit.f90 to fit the ansatz potential
-7. examine the result with plt_compare.f90
-
