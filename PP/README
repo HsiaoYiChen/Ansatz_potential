@@ -1,0 +1,3 @@
+copy the two file to you quantum espresso PP/src
+compile PP with the new Makefile
+then you can run print_vrs to print out the vrs for futher use.
