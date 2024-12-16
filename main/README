@@ -1,6 +1,8 @@
 This is an example code for Gd2PdSi3.
 A general code for different material is under development.
 
+Before using the code, you need first recomplie your quantum espresso with the patch in the PP folder.
+
 How to use them:
 1. use the make_random.f90 to create a bash script: run.sh
 2. activate  run.sh to create folders of different spin configuration.
