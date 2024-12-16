@@ -1,3 +1,6 @@
+Before running the main code, you shoud:
+
 copy the two file to your quantum espresso PP/src
 compile PP with the new Makefile
+
 then you can run print_vrs to print out the vrs for futher use.
