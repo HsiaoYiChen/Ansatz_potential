@@ -36,8 +36,7 @@ program extract
         theta(i)=angle_file((i-1)*3+2)
         phi(i)=angle_file((i-1)*3+3)
   enddo
-
-
+  close(101)
 
   open(unit=101,file='./V_vrs_dp',access='sequential',action='read'&
                 &,form='unformatted')
