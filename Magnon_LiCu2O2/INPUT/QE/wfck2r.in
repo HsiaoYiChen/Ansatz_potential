@@ -1,0 +1,10 @@
+&inputpp
+   prefix='LiCu2O2',
+   outdir='./tmp',
+   first_k=1
+   last_k=2016
+   first_band=45
+   last_band=112
+ loctave=.true.
+ /
+

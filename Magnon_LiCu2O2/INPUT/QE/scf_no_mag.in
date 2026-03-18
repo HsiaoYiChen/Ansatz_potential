@@ -1,0 +1,75 @@
+&control
+    calculation = 'scf'
+    restart_mode = 'from_scratch'
+    wf_collect = .true.
+    prefix = 'LiCu2O2'
+    pseudo_dir = '/home/chen/PP/'
+    outdir = './tmp'
+    verbosity='high'
+ /
+&SYSTEM
+  ibrav = 8
+ celldm(1) =     10.56998456
+ celldm(2) =      0.50453324
+ celldm(3) =      2.16970595
+  !noncolin=.true.
+  !lspinorb=.true.
+  nat = 20
+  ntyp = 3
+  ecutwfc = 95
+  occupations = 'smearing'
+  smearing = 'gaussian'
+  degauss = 0.01
+  !starting_magnetization(1)= 0.5,
+  !starting_magnetization(2)= 0.3,
+  !starting_magnetization(3)= 0.1,
+  !angle1(1)=90.0
+  !angle1(2)=90.0
+  !angle1(3)=90.0
+  !angle2(1)=0.0
+  !angle2(2)=0.0
+  !angle2(3)=0.0
+  nbnd=249
+  nr1=72
+  nr2=36
+  nr3=144
+ /
+ &electrons
+    diago_full_acc = .true.
+    conv_thr = 1000
+    !mixing_beta = 0.04
+    startingpot='file'
+/
+&ions
+/
+&cell
+   press_conv_thr = 0.001
+   cell_dofree='ibrav'
+/
+ATOMIC_SPECIES
+  Cu   63.54600  Cu_DOJO_FR04_PBESOL_STANDARD.upf
+   O   15.99900   O_DOJO_FR04_PBESOL_STANDARD.upf
+  Li    6.96750  Li_DOJO_FR04_PBESOL_STANDARD.upf
+ATOMIC_POSITIONS {crystal}
+Cu                    0.1219643354        0.250000000000        0.1522172689
+Cu                    0.3780356646        0.75000000000        0.3477827311
+Cu                    0.8780356646        0.75000000000        0.6522172689
+Cu                    0.6219643354        0.250000000000        0.8477827311
+Cu                    0.3704297841        0.75000000000        0.9950850010
+Cu                    0.1295702159        0.250000000000        0.5049149990
+Cu                    0.8704297841        0.75000000000        0.0049149990
+Cu                    0.6295702159        0.250000000000        0.4950850010
+O                     0.8783026338        0.75000000000        0.1570634842
+O                     0.3642319441        0.75000000000        0.1459577680
+O                     0.1357680559        0.250000000000        0.3540422320
+O                     0.6216973662        0.250000000000        0.3429365158
+O                     0.6357680559        0.250000000000        0.6459577680
+O                     0.1216973662        0.250000000000        0.6570634842
+O                     0.3783026338        0.75000000000        0.8429365158
+O                     0.8642319441        0.75000000000        0.8540422320
+Li                    0.6180148125        0.250000000000        0.1768409014
+Li                    0.8819851875        0.75000000000        0.3231590986
+Li                    0.1180148125        0.250000000000        0.8231590986
+Li                    0.3819851875        0.75000000000        0.6768409014
+K_POINTS {automatic}
+ 1 1 1   0 0 0

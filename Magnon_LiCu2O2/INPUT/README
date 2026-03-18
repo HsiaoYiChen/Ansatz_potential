@@ -1,0 +1,8 @@
+1. Using the inputs/codes in QE and Ansatz_P folder to follow the Ansatz potential workflow
+2. Using the respack.in to compute the Coulomb interaction among Wannier functions with RESPACK
+3. Using the inputs/code in noncol_magnon to compute the magnetic response spectrum
+
+Alternative:
+
+1. Using  YAMBO_gw.in to compute GW-correction with YAMBO
+

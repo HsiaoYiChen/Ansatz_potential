@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -N LCO_HYC_K1_HYC_K2
+#PBS -j oe
+#PBS -l nodes=1:ppn=48
+#PBS -q GroupA
+#PBS -V
+
+cd $PBS_O_WORKDIR
+echo $PBS_O_WORKDIR
+echo $PBS_NODEFILE
+cat $PBS_NODEFILE | sort | uniq > ooo 
+NPROCS=`wc -l < ooo`
+echo $NPROCS
+cat ooo
+echo $HOSTNAME
+OMP_NUM_THREADS=48
+MKL_NUM_THREADS=1
+export OMP_NUM_THREADS MKL_NUM_THREADS
+export OMP_STACKSIZE=2G
+
+. /opt/intel/psxe2018/compilers_and_libraries_2018.2.199/linux/bin/compilervars.sh intel64 &>> /dev/null
+. /opt/intel/psxe2018/impi/2018.2.199/bin64/mpivars.sh
+
+#for i in 613
+#do
+#	cp mag_tmp.in mag.in
+
+#	sed -i "s/HYC_q/${i}/g" mag.in	
+ifort   -qopenmp Magnon_make_K_openmp.f90 -O2 -mkl=sequential -o mag_op
+        ./mag_op >log_op.out
+#ifort   -qopenmp Magnon_make_T_openmp.f90  -O2 -mkl -o mT_op
+#        ./mT_op  >log_T.out
+#done
